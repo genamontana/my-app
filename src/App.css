@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+    background-color: darkgray;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    position: absolute;
 }
 
 

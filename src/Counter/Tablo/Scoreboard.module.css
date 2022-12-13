@@ -1,0 +1,20 @@
+.scoreboard{
+    font-size: 60px;
+    padding: 30px;
+    border: 3px solid olivedrab;
+    border-radius: 15px;
+    min-width: 400px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.red{
+    color: red;
+    font-size: 60px;
+    padding: 30px;
+    border: 3px solid olivedrab;
+    border-radius: 15px;
+    min-width: 400px;
+    margin-bottom: 40px;
+    text-align: center;
+}
