@@ -7,14 +7,20 @@ type TheCounterItselfType = {
     num: number
     inc: () => void
     res: () => void
+    max: number
+    error: string
 }
 
 export const TheCounterItself = (props: TheCounterItselfType) => {
     return (
         <div className={s.theCounterContainer}>
-            <DisplayCounter num={props.num}/>
+            <DisplayCounter num={props.num}
+                            error={props.error}
+            />
             <ButtonsCounter inc={props.inc}
                             res={props.res}
+                            max={props.max}
+                            num={props.num}
             />
         </div>
     );

@@ -3,12 +3,15 @@ import s from './DisplayCounter.module.css'
 
 type DisplayCounterType = {
     num: number
+    error: string
+
 }
+
 
 export const DisplayCounter = (props: DisplayCounterType) => {
     return (
         <div className={s.displayCounter}>
-            {props.num}
+            {props.error? props.error : props.num}
         </div>
     );
 };
