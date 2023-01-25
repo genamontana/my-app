@@ -1,0 +1,10 @@
+.displayCounter{
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 60px;
+    font-weight: 600;
+    color: cornflowerblue;
+}

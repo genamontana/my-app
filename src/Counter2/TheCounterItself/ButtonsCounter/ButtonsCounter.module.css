@@ -1,4 +1,15 @@
-.buttonsCounterBody{
+.buttonsCounterBody {
     border: 1px solid cornflowerblue;
+    border-radius: 10px;
     padding: 20px;
+    margin: 20px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.counterButton {
+    background: cornflowerblue;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
 }
