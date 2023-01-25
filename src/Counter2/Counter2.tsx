@@ -1,12 +1,13 @@
 import React from 'react';
 import {SettingsCounter} from './SettingsCounter/SettingsCounter';
-import {BodyCounter} from './BodyCounter/BodyCounter';
+import {TheCounterItself} from './TheCounterItself/TheCounterItself';
+import s from './Counter2.module.css'
 
 export const Counter2 = () => {
     return (
-        <div>
+        <div className={s.containerCounter2}>
             <SettingsCounter/>
-            <BodyCounter/>
+            <TheCounterItself/>
         </div>
     );
 };

@@ -1,0 +1,8 @@
+.displayBody{
+    display: flex;
+    flex-direction: column;
+}
+.valueBody{
+    display: flex;
+
+}

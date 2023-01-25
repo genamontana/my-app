@@ -1,10 +1,9 @@
 import React from 'react';
 
-export const BodyCounter = () => {
+export const DisplayCounter = () => {
     return (
         <div>
-
+            5
         </div>
     );
 };
-
