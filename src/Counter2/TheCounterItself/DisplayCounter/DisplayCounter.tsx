@@ -1,10 +1,14 @@
 import React from 'react';
 import s from './DisplayCounter.module.css'
 
-export const DisplayCounter = () => {
+type DisplayCounterType = {
+    num: number
+}
+
+export const DisplayCounter = (props: DisplayCounterType) => {
     return (
         <div className={s.displayCounter}>
-            5
+            {props.num}
         </div>
     );
 };
