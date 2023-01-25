@@ -1,0 +1,15 @@
+.setButtonContainer{
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+.setButtonButton{
+    background: cornflowerblue;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+}

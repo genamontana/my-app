@@ -1,3 +1,7 @@
 .settings{
     border: 1px solid cornflowerblue;
+    border-radius: 10px;
+    height: 200px;
+    width: 250px;
+    margin-right: 80px;
 }

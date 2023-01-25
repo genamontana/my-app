@@ -1,8 +1,31 @@
-.displayBody{
+.displayBody {
     display: flex;
     flex-direction: column;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
 }
-.valueBody{
-    display: flex;
 
+.valueBody {
+    display: flex;
+    justify-content: space-between;
+}
+
+.displayText {
+    font-size: 16px;
+    font-weight: 600;
+    color: cornflowerblue;
+}
+
+.displayInput {
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 12px;
+    font-size: 18px;
+    text-align: center;
+    height: 16px;
+    width: 90px;
+    color: cornflowerblue;
 }

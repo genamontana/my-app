@@ -5,12 +5,18 @@ export const DisplaySettings = () => {
     return (
         <div className={s.displayBody}>
             <div className={s.valueBody}>
-                <p>Max value:</p>
-                <input type="number"/>
+                <p className={s.displayText}>
+                    Max value:
+                </p>
+                <input type="number"
+                       className={s.displayInput}/>
             </div>
             <div className={s.valueBody}>
-                <p>Start value:</p>
-                <input type="number"/>
+                <p className={s.displayText}>
+                    Start value:
+                </p>
+                <input type="number"
+                       className={s.displayInput}/>
             </div>
         </div>
     );
