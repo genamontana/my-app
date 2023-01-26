@@ -9,7 +9,7 @@ type SettingsCounterType = {
     onChangeMax: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const SettingsCounter = (props:SettingsCounterType) => {
+export const SettingsCounter = (props: SettingsCounterType) => {
     return (
         <div className={s.settings}>
             <DisplaySettings onChangeStart={props.onChangeStart}

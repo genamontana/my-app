@@ -16,6 +16,7 @@ export const TheCounterItself = (props: TheCounterItselfType) => {
         <div className={s.theCounterContainer}>
             <DisplayCounter num={props.num}
                             error={props.error}
+                            max={props.max}
             />
             <ButtonsCounter inc={props.inc}
                             res={props.res}

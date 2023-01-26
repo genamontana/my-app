@@ -10,19 +10,33 @@ export const Counter2 = () => {
     const [error, setError] = useState<string>('')
 
 
-    const incClick = () => setNum(num + 1)
-    const resClick = () => setNum(start)
+    const incClick = () => {
+        localStorage.setItem('numCounter', JSON.stringify(num + 1))
+        let valueAsString = localStorage.getItem('numCounter')
+        if (valueAsString) {
+            let newValue = JSON.parse(valueAsString)
+            setNum(newValue)
+        }
+    }
+    const resClick = () => {
+        setNum(start)
+        localStorage.removeItem('numCounter')
+    }
 
     const onClick = () => {
         setNum(start)
         setError('')
     }
     const onChangeStart = (e: ChangeEvent<HTMLInputElement>) => {
+        localStorage.setItem('startValue', e.currentTarget.value)
+        localStorage.getItem('startValue')
         setStart(Number(e.currentTarget.value))
         setError(+e.currentTarget.value === max ? 'invalid value' : 'set')
     }
 
     const onChangeMax = (e: ChangeEvent<HTMLInputElement>) => {
+        localStorage.setItem('maxValue', e.currentTarget.value)
+        localStorage.getItem('maxValue')
         setMax(Number(e.currentTarget.value))
         setError(+e.currentTarget.value < start ? 'invalid value' : 'set')
     }
@@ -33,7 +47,6 @@ export const Counter2 = () => {
             <SettingsCounter onClick={onClick}
                              onChangeStart={onChangeStart}
                              onChangeMax={onChangeMax}
-
             />
             <TheCounterItself max={max}
                               num={num}
