@@ -4,6 +4,8 @@ import s from './DisplaySettings.module.css'
 type DisplaySettingsType = {
     onChangeStart: (e: ChangeEvent<HTMLInputElement>) => void
     onChangeMax: (e: ChangeEvent<HTMLInputElement>) => void
+    start: number
+    max: number
 }
 
 export const DisplaySettings = (props: DisplaySettingsType) => {
@@ -16,6 +18,7 @@ export const DisplaySettings = (props: DisplaySettingsType) => {
                 <input type="number"
                        className={s.displayInput}
                        onChange={props.onChangeMax}
+                       value={props.max}
                 />
             </div>
             <div className={s.valueBody}>
@@ -25,6 +28,7 @@ export const DisplaySettings = (props: DisplaySettingsType) => {
                 <input type="number"
                        className={s.displayInput}
                        onChange={props.onChangeStart}
+                       value={props.start}
                 />
             </div>
         </div>

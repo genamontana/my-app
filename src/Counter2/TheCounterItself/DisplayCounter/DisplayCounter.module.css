@@ -19,3 +19,15 @@
     font-size: 60px;
     font-weight: 600;
 }
+
+.error{
+    color: red;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px 10px 40px 10px;
+    padding: 10px;
+    font-size: 37px;
+    font-weight: 600;
+
+}
