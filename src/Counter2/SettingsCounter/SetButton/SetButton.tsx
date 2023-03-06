@@ -6,9 +6,12 @@ type SetButtonType = {
 }
 
 export const SetButton = (props: SetButtonType) => {
+
+
     return <div className={s.setButtonContainer}>
         <button className={s.setButtonButton}
                 onClick={props.onClick}
+
         >
             SET
         </button>

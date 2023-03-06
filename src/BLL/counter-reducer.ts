@@ -30,28 +30,28 @@ export const counterReducer = (state = initState, action: ActionsType): InitStat
             return {...state, num: state.num + 1}
         }
         case 'RES-CLICK': {
-            return {...state, num: state.num = state.start}
+            return {...state, num: state.start}
         }
         case 'ON-CLICK': {
             return {
                 ...state,
-                num: state.num = state.start,
+                num: state.start,
                 error: state.error = ''
             }
         }
         case 'CHANGE-START': {
             return {
                 ...state,
-                start: state.start = action.value,
-                error: state.error = action.value === state.max
+                start: action.value,
+                error: action.value >= state.max || action.value < 0
                     ? 'invalid value' : 'set'
             }
         }
-        case 'CHANGE-MAX':{
+        case 'CHANGE-MAX': {
             return {
                 ...state,
-                max: state.max = action.value,
-                error: state.error = action.value < state.start
+                max: action.value,
+                error: action.value <= state.start || action.value < 0
                     ? 'invalid value' : 'set'
             }
         }

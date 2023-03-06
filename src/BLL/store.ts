@@ -1,4 +1,4 @@
-import {combineReducers, createStore} from 'redux';
+import {combineReducers, legacy_createStore} from 'redux';
 import {counterReducer} from './counter-reducer';
 
 
@@ -8,8 +8,32 @@ const rootReducer = combineReducers({
 
 export type CounterRootState = ReturnType<typeof rootReducer>
 
-export const store = createStore(rootReducer)
+export const loadState = () => {
+    try {
+        const serializedState = localStorage.getItem('counter');
+        if (serializedState === null) {
+            return undefined;
+        }
+        return JSON.parse(serializedState);
+    } catch (err) {
+        return undefined;
+    }
+};
+
+export const store = legacy_createStore(rootReducer,loadState())
+
+export const saveState = (state:CounterRootState) => {
+    try {
+        const serializedState = JSON.stringify(state);
+        localStorage.setItem('counter', serializedState);
+    } catch {
+        // ignore write errors
+    }
+};
 
 
-// @ts-ignore
-window.store = store
+store.subscribe(() => {
+    saveState({
+        counter: store.getState().counter
+    });
+});
