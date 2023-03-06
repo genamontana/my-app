@@ -2,6 +2,9 @@ import React, {ChangeEvent, useEffect, useState} from 'react';
 import {SettingsCounter} from './SettingsCounter/SettingsCounter';
 import {TheCounterItself} from './TheCounterItself/TheCounterItself';
 import s from './Counter2.module.css'
+import {useDispatch, useSelector} from 'react-redux';
+import {CounterRootState} from '../BLL/store';
+import {incClickAC, InitState, onClickAC, resClickAC} from '../BLL/counter-reducer';
 
 const getValue = (key: string) => {
     const value = localStorage.getItem(key)
@@ -14,6 +17,11 @@ const getError = (key: string) => {
 }
 
 export const Counter2 = () => {
+
+    const dispatch = useDispatch();
+
+    const counter = useSelector<CounterRootState, InitState>(state => state.counter)
+
     const [num, setNum] = useState<number>(getValue('num'))
     const [max, setMax] = useState<number>(getValue('max'))
     const [start, setStart] = useState<number>(getValue('start'))
@@ -23,26 +31,27 @@ export const Counter2 = () => {
         localStorage.setItem('num', JSON.stringify(num))
         localStorage.setItem('max', JSON.stringify(max))
         localStorage.setItem('start', JSON.stringify(start))
-        localStorage.setItem('error',error)
-    }, [num, max, start,error])
+        localStorage.setItem('error', error)
+    }, [num, max, start, error])
 
 
     const incClick = () => {
-        setNum(num => num + 1)
+        dispatch(incClickAC())
+        //setNum(num => num + 1)
     }
     const resClick = () => {
-        setNum(start)
+        dispatch(resClickAC())
+        //setNum(start)
     }
-
     const onClick = () => {
-        setNum(start)
-        setError('')
+        dispatch(onClickAC())
+        // setNum(start)
+        // setError('')
     }
     const onChangeStart = (e: ChangeEvent<HTMLInputElement>) => {
         setStart(Number(e.currentTarget.value))
         setError(+e.currentTarget.value === max ? 'invalid value' : 'set')
     }
-
     const onChangeMax = (e: ChangeEvent<HTMLInputElement>) => {
         setMax(Number(e.currentTarget.value))
         setError(+e.currentTarget.value < start ? 'invalid value' : 'set')
@@ -52,16 +61,16 @@ export const Counter2 = () => {
     return (
         <div className={s.containerCounter2}>
             <SettingsCounter onClick={onClick}
-                             start={start}
-                             max={max}
+                             start={counter.start}
+                             max={counter.max}
                              onChangeStart={onChangeStart}
                              onChangeMax={onChangeMax}
             />
-            <TheCounterItself max={max}
-                              num={num}
+            <TheCounterItself max={counter.max}
+                              num={counter.num}
                               inc={incClick}
                               res={resClick}
-                              error={error}
+                              error={counter.error}
             />
         </div>
     );
