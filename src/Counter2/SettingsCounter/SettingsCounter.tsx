@@ -19,7 +19,9 @@ export const SettingsCounter = (props: SettingsCounterType) => {
                              start={props.start}
                              max={props.max}
             />
-            <SetButton onClick={props.onClick}/>
+            <SetButton onClick={props.onClick}
+                       start={props.start}
+                       max={props.max}/>
         </div>
     );
 };

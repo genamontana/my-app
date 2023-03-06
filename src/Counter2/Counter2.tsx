@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 import {SettingsCounter} from './SettingsCounter/SettingsCounter';
 import {TheCounterItself} from './TheCounterItself/TheCounterItself';
 import s from './Counter2.module.css'
@@ -14,24 +14,18 @@ export const Counter2 = () => {
 
     const incClick = () => {
         dispatch(incClickAC())
-        //setNum(num => num + 1)
     }
     const resClick = () => {
         dispatch(resClickAC())
-        //setNum(start)
     }
     const onClick = () => {
         dispatch(onClickAC())
-        // setNum(start)
-        // setError('')
     }
     const onChangeStart = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch(onChangeStartAC(Number(e.currentTarget.value)))
     }
     const onChangeMax = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch(onChangeMaxAC(+e.currentTarget.value))
-        // setMax(Number(e.currentTarget.value))
-        // setError(+e.currentTarget.value < start ? 'invalid value' : 'set')
     }
 
 
